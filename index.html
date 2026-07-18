@@ -10,9 +10,14 @@
 <meta name="theme-color" content="#22382f">
 <script>
 (function(){
-  var pref = localStorage.getItem('calamma-theme') || 'system';
+  var pref = 'system';
+  try {
+    pref = localStorage.getItem('calamma-theme') || 'system';
+  } catch (e) {}
   var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
   document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', dark ? '#0e1712' : '#22382f');
 })();
 </script>
 <meta property="og:title" content="Ca'Lamma · Peaceful Country Retreat near Bologna">
@@ -165,7 +170,7 @@
 
   /* ABOUT */
   .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}
-  .about-grid img{border-radius:4px;box-shadow:0 30px 70px rgba(31,42,36,.22)}
+  .about-grid img{width:100%;height:auto;aspect-ratio:auto;border-radius:4px;box-shadow:0 30px 70px rgba(31,42,36,.22)}
   @media(max-width:880px){.about-grid{grid-template-columns:1fr}}
   .stats{display:flex;gap:2.6rem;margin-top:2.2rem;flex-wrap:wrap}
   .stats div strong{display:block;font-family:'Fraunces',serif;font-size:2rem;color:var(--green)}
@@ -203,7 +208,7 @@
   .masonry{columns:3;column-gap:1.1rem;margin-top:2.6rem}
   @media(max-width:880px){.masonry{columns:2}}
   @media(max-width:560px){.masonry{columns:1}}
-  .masonry img{width:100%;margin-bottom:1.1rem;border-radius:4px;cursor:pointer;transition:opacity .25s}
+  .masonry img{width:100%;height:auto;aspect-ratio:auto;max-height:70vh;object-fit:cover;margin-bottom:1.1rem;border-radius:4px;cursor:pointer;transition:opacity .25s}
   .masonry img:hover{opacity:.88}
 
   /* LOCATION */
@@ -322,7 +327,7 @@
     <picture>
           <source type="image/avif" srcset="images/house-front.avif">
           <source type="image/webp" srcset="images/house-front.webp">
-          <img src="images/house-front.jpg" width="960" height="430" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f5fe266c-2499-451b-ae93-1d4a85adc11a.png?im_w=960'" loading="lazy" decoding="async" alt="The stone facade of Ca'Lamma with wooden shutters and flowering garden">
+          <img src="images/house-front.jpg" width="960" height="430" loading="lazy" decoding="async" alt="The stone facade of Ca'Lamma with wooden shutters and flowering garden">
         </picture>
   </div>
 </section>
@@ -336,7 +341,7 @@
         <picture>
           <source type="image/avif" srcset="images/living-room.avif">
           <source type="image/webp" srcset="images/living-room.webp">
-          <img src="images/living-room.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f60ea77b-698f-4006-ba10-133878220363.jpeg?im_w=960'" loading="lazy" decoding="async" alt="Open-plan living area with sofas and terracotta floors">
+          <img src="images/living-room.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Open-plan living area with sofas and terracotta floors">
         </picture>
         <div class="pad">
           <h3>Living &amp; kitchen</h3>
@@ -347,7 +352,7 @@
         <picture>
           <source type="image/avif" srcset="images/bedroom-1.avif">
           <source type="image/webp" srcset="images/bedroom-1.webp">
-          <img src="images/bedroom-1.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/9752562e-f141-449f-a160-2e6ad03b59c2.jpeg?im_w=960'" loading="lazy" decoding="async" alt="Double bedroom overlooking the woods">
+          <img src="images/bedroom-1.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Double bedroom overlooking the woods">
         </picture>
         <div class="pad">
           <h3>Sleeping upstairs</h3>
@@ -358,7 +363,7 @@
         <picture>
           <source type="image/avif" srcset="images/gazebo-dining.avif">
           <source type="image/webp" srcset="images/gazebo-dining.webp">
-          <img src="images/gazebo-dining.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/cbc86373-a1f2-43f4-bbd0-78ea05bda7cb.jpeg?im_w=960'" loading="lazy" decoding="async" alt="Vine-covered iron gazebo with a table set for lunch">
+          <img src="images/gazebo-dining.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="Vine-covered iron gazebo with a table set for lunch">
         </picture>
         <div class="pad">
           <h3>Garden &amp; pergola</h3>
@@ -394,22 +399,22 @@
       <div class="season"><picture>
       <source type="image/avif" srcset="images/season-spring.avif">
       <source type="image/webp" srcset="images/season-spring.webp">
-      <img src="images/season-spring.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/02c79b05-01f6-4c68-a252-67eb96187723.jpeg?im_w=720'" alt="The rooftop among blossoming trees in spring" loading="lazy" decoding="async">
+      <img src="images/season-spring.jpg" width="960" height="720" alt="The rooftop among blossoming trees in spring" loading="lazy" decoding="async">
     </picture><span>Spring</span></div>
       <div class="season"><picture>
       <source type="image/avif" srcset="images/season-summer.avif">
       <source type="image/webp" srcset="images/season-summer.webp">
-      <img src="images/season-summer.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/eda96b3f-dfd7-4fd0-aa35-0c9b2d8283d6.jpeg?im_w=720'" alt="The garden in full summer green with parasol" loading="lazy" decoding="async">
+      <img src="images/season-summer.jpg" width="960" height="720" alt="The garden in full summer green with parasol" loading="lazy" decoding="async">
     </picture><span>Summer</span></div>
       <div class="season"><picture>
       <source type="image/avif" srcset="images/season-autumn.avif">
       <source type="image/webp" srcset="images/season-autumn.webp">
-      <img src="images/season-autumn.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/dee490d4-c183-4973-befa-c823bae20ac8.jpeg?im_w=720'" alt="Golden autumn woods across the valley" loading="lazy" decoding="async">
+      <img src="images/season-autumn.jpg" width="960" height="720" alt="Golden autumn woods across the valley" loading="lazy" decoding="async">
     </picture><span>Autumn</span></div>
       <div class="season"><picture>
       <source type="image/avif" srcset="images/season-winter.avif">
       <source type="image/webp" srcset="images/season-winter.webp">
-      <img src="images/season-winter.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f25f2a0b-6158-4bc9-993b-e2b99256e0cd.jpeg?im_w=720'" alt="The hamlet under snow in winter" loading="lazy" decoding="async">
+      <img src="images/season-winter.jpg" width="960" height="720" alt="The hamlet under snow in winter" loading="lazy" decoding="async">
     </picture><span>Winter</span></div>
     </div>
   </div>
@@ -423,72 +428,72 @@
       <picture>
       <source type="image/avif" srcset="images/courtyard-view.avif">
       <source type="image/webp" srcset="images/courtyard-view.webp">
-      <img src="images/courtyard-view.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/be249548-2915-4111-a952-58a17ebc2321.jpeg?im_w=720'" alt="View of the old barn and bench from the kitchen doors" loading="lazy" decoding="async">
+      <img src="images/courtyard-view.jpg" width="960" height="1280" alt="View of the old barn and bench from the kitchen doors" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/wildflowers.avif">
       <source type="image/webp" srcset="images/wildflowers.webp">
-      <img src="images/wildflowers.jpg" width="960" height="640" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/b16dab46-8104-4969-b5f9-5d81dbd2360e.png?im_w=720'" alt="Wildflower meadow with globe thistles and coneflowers" loading="lazy" decoding="async">
+      <img src="images/wildflowers.jpg" width="960" height="640" alt="Wildflower meadow with globe thistles and coneflowers" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/bedroom-2.avif">
       <source type="image/webp" srcset="images/bedroom-2.webp">
-      <img src="images/bedroom-2.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/2c4b17da-8c94-4b71-9492-0287e2b7feea.jpeg?im_w=720'" alt="Bedroom with dark-red accent wall and beamed ceiling" loading="lazy" decoding="async">
+      <img src="images/bedroom-2.jpg" width="960" height="1280" alt="Bedroom with dark-red accent wall and beamed ceiling" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/kitchen.avif">
       <source type="image/webp" srcset="images/kitchen.webp">
-      <img src="images/kitchen.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/69c70bd1-b559-4ba2-bf87-f2e4f61a9e55.jpeg?im_w=720'" alt="Kitchen with dining table" loading="lazy" decoding="async">
+      <img src="images/kitchen.jpg" width="960" height="720" alt="Kitchen with dining table" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/entrance-hall.avif">
       <source type="image/webp" srcset="images/entrance-hall.webp">
-      <img src="images/entrance-hall.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/76d2176c-4ceb-45cd-9059-78f59b064c4a.jpeg?im_w=720'" alt="Entrance hall with staircase and round window" loading="lazy" decoding="async">
+      <img src="images/entrance-hall.jpg" width="960" height="1280" alt="Entrance hall with staircase and round window" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/vine-pergola.avif">
       <source type="image/webp" srcset="images/vine-pergola.webp">
-      <img src="images/vine-pergola.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/564fc8a1-5973-42d5-b360-02266e054203.jpeg?im_w=720'" alt="Grape vine canopy over the iron pergola" loading="lazy" decoding="async">
+      <img src="images/vine-pergola.jpg" width="960" height="720" alt="Grape vine canopy over the iron pergola" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/garden-yarrow.avif">
       <source type="image/webp" srcset="images/garden-yarrow.webp">
-      <img src="images/garden-yarrow.jpg" width="960" height="960" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/6ebe75a0-c9f1-4801-bee9-b1b8fd5b2e63.jpeg?im_w=720'" alt="Yellow yarrow flowers against the stone wall" loading="lazy" decoding="async">
+      <img src="images/garden-yarrow.jpg" width="960" height="960" alt="Yellow yarrow flowers against the stone wall" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/bathroom-blue.avif">
       <source type="image/webp" srcset="images/bathroom-blue.webp">
-      <img src="images/bathroom-blue.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/7e9eb3b2-483f-4172-88ea-07d39989594a.jpeg?im_w=720'" alt="Bathroom with blue tiled shower" loading="lazy" decoding="async">
+      <img src="images/bathroom-blue.jpg" width="960" height="1280" alt="Bathroom with blue tiled shower" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/garden-path.avif">
       <source type="image/webp" srcset="images/garden-path.webp">
-      <img src="images/garden-path.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/0629f24e-82f2-4a66-b6e6-27ac32ab27e4.jpeg?im_w=720'" alt="Garden path to the old stone shed" loading="lazy" decoding="async">
+      <img src="images/garden-path.jpg" width="960" height="1280" alt="Garden path to the old stone shed" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/table-tennis.avif">
       <source type="image/webp" srcset="images/table-tennis.webp">
-      <img src="images/table-tennis.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/1b19166b-3123-4a37-854f-0688a4f081ed.jpeg?im_w=720'" alt="Table tennis in the garden" loading="lazy" decoding="async">
+      <img src="images/table-tennis.jpg" width="960" height="1280" alt="Table tennis in the garden" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/bathroom-green.avif">
       <source type="image/webp" srcset="images/bathroom-green.webp">
-      <img src="images/bathroom-green.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/7dafbbf5-5a56-4677-a89d-329b67b8131e.jpeg?im_w=720'" alt="Upstairs bathroom with green tiles" loading="lazy" decoding="async">
+      <img src="images/bathroom-green.jpg" width="960" height="1280" alt="Upstairs bathroom with green tiles" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/ivy-house.avif">
       <source type="image/webp" srcset="images/ivy-house.webp">
-      <img src="images/ivy-house.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f85c8737-9d3d-496a-b0e7-7d97dabd5a95.jpeg?im_w=720'" alt="The ivy-clad house seen from above" loading="lazy" decoding="async">
+      <img src="images/ivy-house.jpg" width="960" height="1280" alt="The ivy-clad house seen from above" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/wild-garden.avif">
       <source type="image/webp" srcset="images/wild-garden.webp">
-      <img src="images/wild-garden.jpg" width="960" height="720" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/c0da4415-5a23-4522-9c0a-33ee93693dc3.jpeg?im_w=720'" alt="The house across the wild garden" loading="lazy" decoding="async">
+      <img src="images/wild-garden.jpg" width="960" height="720" alt="The house across the wild garden" loading="lazy" decoding="async">
     </picture>
       <picture>
       <source type="image/avif" srcset="images/dog.avif">
       <source type="image/webp" srcset="images/dog.webp">
-      <img src="images/dog.jpg" width="960" height="1280" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/70e08bf5-79fb-4324-9be1-f2c5e3e4caf1.jpeg?im_w=720'" alt="A happy dog in the garden, pets are welcome" loading="lazy" decoding="async">
+      <img src="images/dog.jpg" width="960" height="1280" alt="A happy dog in the garden, pets are welcome" loading="lazy" decoding="async">
     </picture>
     </div>
   </div>
@@ -569,7 +574,7 @@
   var lb = document.getElementById('lightbox');
   function openLightbox(img){
     var full = lb.querySelector('img');
-    full.src = img.currentSrc.replace('im_w=720','im_w=1440');
+    full.src = img.currentSrc;
     full.alt = img.alt;
     lb.classList.add('open');
     lb.setAttribute('aria-hidden','false');
@@ -599,7 +604,11 @@
     var buttons = document.querySelectorAll('.theme-btn');
 
     function getPref(){
-      return localStorage.getItem(KEY) || 'system';
+      try {
+        return localStorage.getItem(KEY) || 'system';
+      } catch (e) {
+        return 'system';
+      }
     }
     function apply(pref){
       var dark = pref === 'dark' || (pref === 'system' && mql.matches);
@@ -613,7 +622,9 @@
     buttons.forEach(function(btn){
       btn.addEventListener('click', function(){
         var choice = btn.dataset.themeChoice;
-        localStorage.setItem(KEY, choice);
+        try {
+          localStorage.setItem(KEY, choice);
+        } catch (e) {}
         apply(choice);
       });
     });
