@@ -6,6 +6,13 @@
 <title>Ca'Lamma · Peaceful Country Retreat near Bologna</title>
 <meta name="description" content="Ca'Lamma is a charming restored stone house in a quiet valley in Monterenzio, on the hills near Bologna. Sleeps 6, 2 bedrooms, pets welcome.">
 <meta name="theme-color" content="#22382f">
+<script>
+(function(){
+  var pref = localStorage.getItem('calamma-theme') || 'system';
+  var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+})();
+</script>
 <meta property="og:title" content="Ca'Lamma · Peaceful Country Retreat near Bologna">
 <meta property="og:description" content="A restored stone house in a quiet valley in Monterenzio. Sleeps 6, pets welcome. Rated 4.91/5 on Airbnb and 9.8/10 on Booking.com.">
 <meta property="og:type" content="website">
@@ -24,24 +31,48 @@
     --green-deep:#22382f;
     --sage:#a9b8a3;
     --line:#e3e2d8;
+    --nav-bg:rgba(251,250,247,.9);
+    color-scheme:light;
+  }
+  :root[data-theme="dark"]{
+    --bg:#141f19;
+    --panel:#1b2921;
+    --ink:#eef1ec;
+    --soft:#9db0a2;
+    --green:#7fb497;
+    --green-deep:#0e1712;
+    --sage:#8fae87;
+    --line:#2b3a32;
+    --nav-bg:rgba(20,31,25,.88);
+    color-scheme:dark;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;font-weight:300}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;font-weight:300;transition:background-color .25s ease,color .25s ease}
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:400}
   img{display:block;max-width:100%}
   a{color:var(--green)}
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
-      padding:1rem 5vw;background:rgba(251,250,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+      padding:1rem 5vw;background:var(--nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:background-color .25s ease}
   nav .brand{font-family:'Fraunces',serif;font-size:1.4rem;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+  .nav-right{display:flex;align-items:center;gap:1.4rem}
   nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
   nav ul a{text-decoration:none;color:var(--soft);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
   nav ul a:hover{color:var(--green)}
   nav .cta{background:var(--green);color:#fff !important;padding:.55rem 1.2rem;border-radius:3px}
   nav .cta:hover{background:var(--green-deep)}
   #burger{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);cursor:pointer;line-height:1}
+
+  /* THEME TOGGLE */
+  .theme-toggle{display:flex;gap:.15rem;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:.2rem}
+  .theme-btn{display:flex;align-items:center;justify-content:center;width:2rem;height:2rem;border:none;background:none;
+             border-radius:16px;color:var(--soft);cursor:pointer;transition:background-color .2s,color .2s}
+  .theme-btn svg{width:1.05rem;height:1.05rem;stroke-width:2}
+  .theme-btn:hover{color:var(--ink)}
+  .theme-btn[aria-pressed="true"]{background:var(--green);color:#fff}
+
   @media(max-width:760px){
     #burger{display:block}
     nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
@@ -184,15 +215,28 @@
 
 <nav>
   <a class="brand" href="#top">Ca'Lamma</a>
-  <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
-  <ul id="menu">
-    <li><a href="#about">The House</a></li>
-    <li><a href="#spaces">Spaces</a></li>
-    <li><a href="#seasons">Seasons</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#location">Location</a></li>
-    <li class="keep"><a class="cta" href="#book">Book</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul id="menu">
+      <li><a href="#about">The House</a></li>
+      <li><a href="#spaces">Spaces</a></li>
+      <li><a href="#seasons">Seasons</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#location">Location</a></li>
+      <li class="keep"><a class="cta" href="#book">Book</a></li>
+    </ul>
+    <div class="theme-toggle" role="group" aria-label="Theme">
+      <button type="button" class="theme-btn" data-theme-choice="light" aria-label="Light theme" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      </button>
+      <button type="button" class="theme-btn" data-theme-choice="system" aria-label="System theme" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+      </button>
+      <button type="button" class="theme-btn" data-theme-choice="dark" aria-label="Dark theme" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+    </div>
+    <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+  </div>
 </nav>
 
 <header class="hero" id="top">
@@ -407,6 +451,39 @@
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeLightbox();
   });
+
+  // THEME TOGGLE
+  (function(){
+    var KEY = 'calamma-theme';
+    var mql = window.matchMedia('(prefers-color-scheme: dark)');
+    var metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    var buttons = document.querySelectorAll('.theme-btn');
+
+    function getPref(){
+      return localStorage.getItem(KEY) || 'system';
+    }
+    function apply(pref){
+      var dark = pref === 'dark' || (pref === 'system' && mql.matches);
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      if(metaThemeColor) metaThemeColor.setAttribute('content', dark ? '#0e1712' : '#22382f');
+      buttons.forEach(function(btn){
+        btn.setAttribute('aria-pressed', btn.dataset.themeChoice === pref ? 'true' : 'false');
+      });
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var choice = btn.dataset.themeChoice;
+        localStorage.setItem(KEY, choice);
+        apply(choice);
+      });
+    });
+    mql.addEventListener('change', function(){
+      if(getPref() === 'system') apply('system');
+    });
+
+    apply(getPref());
+  })();
 </script>
 </body>
 </html>
