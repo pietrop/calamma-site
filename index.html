@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ca'Lamma · Peaceful Country Retreat near Bologna</title>
+<meta name="description" content="Ca'Lamma is a charming restored stone house in a quiet valley in Monterenzio, on the hills near Bologna. Sleeps 6, 2 bedrooms, pets welcome.">
+<meta name="theme-color" content="#22382f">
+<meta property="og:title" content="Ca'Lamma · Peaceful Country Retreat near Bologna">
+<meta property="og:description" content="A restored stone house in a quiet valley in Monterenzio. Sleeps 6, pets welcome. Rated 4.91/5 on Airbnb and 9.8/10 on Booking.com.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/be9e4b74-d6b2-4db6-a7c4-045fbe62a128.jpeg?im_w=1200">
+<link rel="preload" as="image" href="images/hero-drone.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf7;
+    --panel:#f2f1ea;
+    --ink:#1f2a24;
+    --soft:#5c6b60;
+    --green:#2e4b3f;
+    --green-deep:#22382f;
+    --sage:#a9b8a3;
+    --line:#e3e2d8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;font-weight:300}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:400}
+  img{display:block;max-width:100%}
+  a{color:var(--green)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+      padding:1rem 5vw;background:rgba(251,250,247,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .brand{font-family:'Fraunces',serif;font-size:1.4rem;letter-spacing:.04em;color:var(--ink);text-decoration:none}
+  nav ul{display:flex;gap:2rem;list-style:none;align-items:center}
+  nav ul a{text-decoration:none;color:var(--soft);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}
+  nav ul a:hover{color:var(--green)}
+  nav .cta{background:var(--green);color:#fff !important;padding:.55rem 1.2rem;border-radius:3px}
+  nav .cta:hover{background:var(--green-deep)}
+  #burger{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);cursor:pointer;line-height:1}
+  @media(max-width:760px){
+    #burger{display:block}
+    nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+           background:var(--bg);border-bottom:1px solid var(--line);padding:.5rem 0}
+    nav ul.open{display:flex}
+    nav ul li{width:100%;text-align:center}
+    nav ul a{display:block;padding:.9rem 0}
+    nav .cta{margin:.5rem 5vw;display:block}
+  }
+
+  /* MOBILE SPACING */
+  @media(max-width:760px){
+    /* crop the hero so the houses sit bottom right on portrait screens */
+    header.hero{background-position:62% 75%}
+  }
+  @media(max-width:640px){
+    section{padding:4rem 5vw}
+    .about-grid{gap:2.5rem}
+    .stats{gap:1.6rem}
+    .card img{height:200px}
+    .season img{height:220px}
+    .hero-inner{padding-bottom:12vh}
+    .review-band blockquote{font-size:1.35rem}
+  }
+
+  /* HERO */
+  header.hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;
+    background:url('images/hero-drone.jpeg') center/cover no-repeat,
+               url('images/hero-valley.jpg') center/cover no-repeat,
+               url('https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/be9e4b74-d6b2-4db6-a7c4-045fbe62a128.jpeg?im_w=1440') center/cover no-repeat, var(--green-deep)}
+  header.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,14,.12) 40%,rgba(10,20,14,.72))}
+  .hero-inner{position:relative;z-index:2;color:#fff;padding:0 5vw 10vh;max-width:960px;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+  .hero-inner .kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.75rem;font-weight:500;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.85)}
+  .hero-inner h1{font-size:clamp(2.5rem,6vw,4.6rem);line-height:1.08;margin:.5rem 0 1rem;font-weight:300}
+  .hero-inner h1 em{font-style:italic}
+  .hero-inner p{font-size:1.05rem;max-width:36rem;opacity:.95}
+  .hero-btns{margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;padding:.85rem 1.8rem;border-radius:3px;font-size:.88rem;letter-spacing:.1em;font-weight:400;text-transform:uppercase;transition:.2s}
+  .btn-solid{background:#fff;color:var(--green-deep)}
+  .btn-solid:hover{background:var(--sage);color:var(--green-deep)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.75);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.15)}
+
+  section{padding:6.5rem 5vw}
+  .narrow{max-width:1150px;margin:0 auto}
+  .kicker{color:var(--green);letter-spacing:.3em;text-transform:uppercase;font-size:.7rem;font-weight:500}
+  h2{font-size:clamp(2rem,4vw,3rem);margin:.5rem 0 1.2rem;line-height:1.12}
+  .lead{font-size:1.08rem;color:var(--soft);max-width:46rem}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center}
+  .about-grid img{border-radius:4px;box-shadow:0 30px 70px rgba(31,42,36,.22)}
+  @media(max-width:880px){.about-grid{grid-template-columns:1fr}}
+  .stats{display:flex;gap:2.6rem;margin-top:2.2rem;flex-wrap:wrap}
+  .stats div strong{display:block;font-family:'Fraunces',serif;font-size:2rem;color:var(--green)}
+  .stats div strong small{font-size:1rem;color:var(--soft);font-family:'Fraunces',serif}
+  .stats div span{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .stats .stars-sm{display:block;color:#b98f2f;font-size:.72rem;letter-spacing:.18em;margin:.15rem 0 .1rem}
+
+  /* SPACES */
+  .spaces{background:var(--panel)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;margin-top:2.6rem}
+  @media(max-width:880px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--bg);border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+  .card img{height:240px;width:100%;object-fit:cover}
+  .card .pad{padding:1.5rem 1.6rem 1.8rem}
+  .card h3{font-size:1.4rem;margin-bottom:.5rem}
+  .card p{font-size:.94rem;color:var(--soft)}
+
+  /* AMENITIES */
+  .amenities ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem 2rem;list-style:none;margin-top:2rem}
+  .amenities li{padding-left:1.7rem;position:relative;color:var(--soft);font-size:.96rem}
+  .amenities li::before{content:'·';position:absolute;left:.3rem;color:var(--sage);font-weight:700}
+
+  /* SEASONS */
+  .seasons{background:var(--green-deep);color:#eef0e9}
+  .seasons .kicker{color:var(--sage)}
+  .seasons h2{color:#fff}
+  .season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.6rem}
+  @media(max-width:880px){.season-grid{grid-template-columns:repeat(2,1fr)}}
+  .season{position:relative;border-radius:4px;overflow:hidden}
+  .season img{height:330px;width:100%;object-fit:cover;transition:transform .4s}
+  .season:hover img{transform:scale(1.04)}
+  .season span{position:absolute;left:1rem;bottom:.9rem;font-family:'Fraunces',serif;font-size:1.25rem;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+
+  /* GALLERY */
+  .masonry{columns:3;column-gap:1.1rem;margin-top:2.6rem}
+  @media(max-width:880px){.masonry{columns:2}}
+  @media(max-width:560px){.masonry{columns:1}}
+  .masonry img{width:100%;margin-bottom:1.1rem;border-radius:4px;cursor:pointer;transition:opacity .25s}
+  .masonry img:hover{opacity:.88}
+
+  /* LOCATION */
+  .location{background:var(--panel)}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.6rem;align-items:start;margin-top:2rem}
+  @media(max-width:880px){.loc-grid{grid-template-columns:1fr}}
+  .dist{list-style:none}
+  .dist li{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.96rem}
+  .dist li span:last-child{color:var(--green);white-space:nowrap}
+
+  /* REVIEWS */
+  .review-band{text-align:center}
+  .scores{display:flex;justify-content:center;gap:4.5rem;flex-wrap:wrap;margin-bottom:1rem}
+  .review-band .score{font-family:'Fraunces',serif;font-size:4.2rem;line-height:1;color:var(--green)}
+  .review-band .score small{font-size:1.6rem;color:var(--soft);font-family:'Fraunces',serif}
+  .review-band .stars{letter-spacing:.32em;color:#b98f2f;margin:.5rem 0 .4rem}
+  .review-band .src{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+  .review-band blockquote{font-family:'Fraunces',serif;font-size:1.7rem;font-style:italic;max-width:38rem;margin:1.6rem auto .5rem;color:var(--ink)}
+  .review-band cite{font-style:normal;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+
+  /* BOOK */
+  .book{background:var(--green-deep);color:#eef0e9;text-align:center}
+  .book .kicker{color:var(--sage)}
+  .book h2{color:#fff}
+  .book .lead{color:#c9d2c4;margin:0 auto}
+  .book .btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+  .btn-air{background:#fff;color:#22382f}
+  .btn-air:hover{background:var(--sage)}
+  .btn-bkg{border:1px solid rgba(255,255,255,.7);color:#fff}
+  .btn-bkg:hover{background:rgba(255,255,255,.12)}
+
+  footer{background:#16241d;color:#93a297;padding:3rem 5vw;text-align:center;font-size:.84rem}
+  footer .brand{font-family:'Fraunces',serif;font-size:1.6rem;color:#fff;display:block;margin-bottom:.6rem}
+
+  /* LIGHTBOX */
+  #lightbox{position:fixed;inset:0;background:rgba(12,20,15,.94);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out}
+  #lightbox img{max-width:92vw;max-height:90vh;border-radius:4px}
+  #lightbox.open{display:flex}
+
+  /* ACCESSIBILITY */
+  a:focus-visible,button:focus-visible,img:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+  .hero .btn:focus-visible,.book .btn:focus-visible{outline-color:#fff}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#top">Ca'Lamma</a>
+  <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+  <ul id="menu">
+    <li><a href="#about">The House</a></li>
+    <li><a href="#spaces">Spaces</a></li>
+    <li><a href="#seasons">Seasons</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#location">Location</a></li>
+    <li class="keep"><a class="cta" href="#book">Book</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker">Monterenzio · Bologna Apennines · Italy</p>
+    <h1>Ca'Lamma<br><em>Peaceful Country Retreat</em></h1>
+    <p>A lovingly restored stone house on the hills south of Bologna, with bright interiors, a wild flowering garden, and nothing but woodland and birdsong around you.</p>
+    <div class="hero-btns">
+      <a class="btn btn-solid" href="#book">Check availability</a>
+      <a class="btn btn-ghost" href="#about">Discover the house</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="about">
+  <div class="narrow about-grid">
+    <div>
+      <p class="kicker">Welcome</p>
+      <h2>Peaceful country living, minutes from the city</h2>
+      <p class="lead">The recently renovated stone house offers spacious, bright and cool interiors, comfortably sleeping up to six guests: two double bedrooms, plus a cosy mini living room upstairs with a double sofa bed for two more. The natural surroundings make it an ideal destination for hiking, river swimming and al fresco dining, while Bologna, Florence and Venice are within easy reach for day trips.</p>
+      <div class="stats">
+        <div><strong>6</strong><span>Guests</span></div>
+        <div><strong>2</strong><span>Bedrooms</span></div>
+        <div><strong>3</strong><span>Beds</span></div>
+        <div><strong>2</strong><span>Bathrooms</span></div>
+        <div><strong>4.91<small>/5</small></strong><span class="stars-sm">★ ★ ★ ★ ★</span><span>Airbnb · 44 reviews</span></div>
+        <div><strong>9.8<small>/10</small></strong><span class="stars-sm">★ ★ ★ ★ ★</span><span>Booking.com</span></div>
+      </div>
+    </div>
+    <img src="images/house-front.png" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f5fe266c-2499-451b-ae93-1d4a85adc11a.png?im_w=960'" loading="lazy" decoding="async" alt="The stone facade of Ca'Lamma with wooden shutters and flowering garden">
+  </div>
+</section>
+
+<section class="spaces" id="spaces">
+  <div class="narrow">
+    <p class="kicker">The Spaces</p>
+    <h2>Inside &amp; out</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/living-room.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f60ea77b-698f-4006-ba10-133878220363.jpeg?im_w=960'" loading="lazy" decoding="async" alt="Open-plan living area with sofas and terracotta floors">
+        <div class="pad">
+          <h3>Living &amp; kitchen</h3>
+          <p>A spacious open-plan living area on the ground floor with a fully equipped kitchen, terracotta floors, garden views on every side and a wood-burning stove for winter days.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/bedroom-1.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/9752562e-f141-449f-a160-2e6ad03b59c2.jpeg?im_w=960'" loading="lazy" decoding="async" alt="Double bedroom overlooking the woods">
+        <div class="pad">
+          <h3>Sleeping upstairs</h3>
+          <p>Two double bedrooms overlooking the woods, joined by a lounge room with a double sofa bed. Each floor has its own bathroom with shower.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/gazebo-dining.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/cbc86373-a1f2-43f4-bbd0-78ea05bda7cb.jpeg?im_w=960'" loading="lazy" decoding="async" alt="Vine-covered iron gazebo with a table set for lunch">
+        <div class="pad">
+          <h3>Garden &amp; pergola</h3>
+          <p>A private garden at the rear of the house for outdoor dining under the vine-covered pergola, table tennis, or simply relaxing in the sun among the wildflowers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amenities" id="amenities">
+  <div class="narrow">
+    <p class="kicker">Comforts</p>
+    <h2>Everything you need</h2>
+    <ul>
+      <li>Fast Wi-Fi &amp; dedicated workspace</li>
+      <li>Air conditioning &amp; wood stove</li>
+      <li>Fully equipped kitchen, espresso &amp; drip coffee</li>
+      <li>Washer &amp; TV</li>
+      <li>Free driveway parking (4 spaces)</li>
+      <li>Pets welcome</li>
+      <li>Toddler beds available</li>
+      <li>Private garden, table tennis &amp; outdoor dining</li>
+      <li>Solar-powered hot water</li>
+    </ul>
+  </div>
+</section>
+
+<section class="seasons" id="seasons">
+  <div class="narrow">
+    <p class="kicker">Through the year</p>
+    <h2>Every season has its own valley</h2>
+    <div class="season-grid">
+      <div class="season"><img src="images/season-spring.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/02c79b05-01f6-4c68-a252-67eb96187723.jpeg?im_w=720'" alt="The rooftop among blossoming trees in spring" loading="lazy" decoding="async"><span>Spring</span></div>
+      <div class="season"><img src="images/season-summer.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/eda96b3f-dfd7-4fd0-aa35-0c9b2d8283d6.jpeg?im_w=720'" alt="The garden in full summer green with parasol" loading="lazy" decoding="async"><span>Summer</span></div>
+      <div class="season"><img src="images/season-autumn.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/dee490d4-c183-4973-befa-c823bae20ac8.jpeg?im_w=720'" alt="Golden autumn woods across the valley" loading="lazy" decoding="async"><span>Autumn</span></div>
+      <div class="season"><img src="images/season-winter.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f25f2a0b-6158-4bc9-993b-e2b99256e0cd.jpeg?im_w=720'" alt="The hamlet under snow in winter" loading="lazy" decoding="async"><span>Winter</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="narrow">
+    <p class="kicker">Gallery</p>
+    <h2>A look around</h2>
+    <div class="masonry" id="masonry">
+      <img src="images/courtyard-view.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/be249548-2915-4111-a952-58a17ebc2321.jpeg?im_w=720'" alt="View of the old barn and bench from the kitchen doors" loading="lazy">
+      <img src="images/wildflowers.png" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/b16dab46-8104-4969-b5f9-5d81dbd2360e.png?im_w=720'" alt="Wildflower meadow with globe thistles and coneflowers" loading="lazy">
+      <img src="images/bedroom-2.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/2c4b17da-8c94-4b71-9492-0287e2b7feea.jpeg?im_w=720'" alt="Bedroom with dark-red accent wall and beamed ceiling" loading="lazy">
+      <img src="images/kitchen.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/69c70bd1-b559-4ba2-bf87-f2e4f61a9e55.jpeg?im_w=720'" alt="Kitchen with dining table" loading="lazy">
+      <img src="images/entrance-hall.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/76d2176c-4ceb-45cd-9059-78f59b064c4a.jpeg?im_w=720'" alt="Entrance hall with staircase and round window" loading="lazy">
+      <img src="images/vine-pergola.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/564fc8a1-5973-42d5-b360-02266e054203.jpeg?im_w=720'" alt="Grape vine canopy over the iron pergola" loading="lazy">
+      <img src="images/garden-yarrow.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/6ebe75a0-c9f1-4801-bee9-b1b8fd5b2e63.jpeg?im_w=720'" alt="Yellow yarrow flowers against the stone wall" loading="lazy">
+      <img src="images/bathroom-blue.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/7e9eb3b2-483f-4172-88ea-07d39989594a.jpeg?im_w=720'" alt="Bathroom with blue tiled shower" loading="lazy">
+      <img src="images/garden-path.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/0629f24e-82f2-4a66-b6e6-27ac32ab27e4.jpeg?im_w=720'" alt="Garden path to the old stone shed" loading="lazy">
+      <img src="images/table-tennis.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/1b19166b-3123-4a37-854f-0688a4f081ed.jpeg?im_w=720'" alt="Table tennis in the garden" loading="lazy">
+      <img src="images/bathroom-green.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/7dafbbf5-5a56-4677-a89d-329b67b8131e.jpeg?im_w=720'" alt="Upstairs bathroom with green tiles" loading="lazy">
+      <img src="images/ivy-house.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/f85c8737-9d3d-496a-b0e7-7d97dabd5a95.jpeg?im_w=720'" alt="The ivy-clad house seen from above" loading="lazy">
+      <img src="images/wild-garden.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/c0da4415-5a23-4522-9c0a-33ee93693dc3.jpeg?im_w=720'" alt="The house across the wild garden" loading="lazy">
+      <img src="images/dog.jpg" onerror="this.onerror=null;this.src='https://a0.muscache.com/im/pictures/hosting/Hosting-3348182/original/70e08bf5-79fb-4324-9be1-f2c5e3e4caf1.jpeg?im_w=720'" alt="A happy dog in the garden, pets are welcome" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="location" id="location">
+  <div class="narrow">
+    <p class="kicker">Location</p>
+    <h2>In the hills, close to everything</h2>
+    <div class="loc-grid">
+      <p class="lead">Ca'Lamma sits in a quiet woodland valley in Monterenzio, on the Apennine hills south of Bologna. Days here start with birdsong and end with valley sunsets, yet swimming pools, spas, trattorias and three of Italy's great art cities are an easy drive away. Tennis courts, horse riding and local museums are just a few kilometres from the door.</p>
+      <ul class="dist">
+        <li><span>Swimming pools</span><span>5 min</span></li>
+        <li><span>Tennis &amp; horse riding</span><span>2-3 km</span></li>
+        <li><span>Spa resorts</span><span>30 min</span></li>
+        <li><span>Bologna</span><span>~40 min</span></li>
+        <li><span>Rivers for swimming</span><span>45 min</span></li>
+        <li><span>Florence</span><span>~1 h 15</span></li>
+        <li><span>Adriatic coast</span><span>1 h 30</span></li>
+        <li><span>Venice</span><span>~2 h</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="review-band">
+  <div class="narrow">
+    <div class="scores">
+      <div>
+        <div class="score">4.91<small>/5</small></div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="src">Airbnb · 44 reviews</div>
+      </div>
+      <div>
+        <div class="score">9.8<small>/10</small></div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <div class="src">Booking.com</div>
+      </div>
+    </div>
+    <p class="lead" style="margin:0 auto">Loved by guests on both platforms, with Gabriella hosting for over 15 years.</p>
+    <blockquote>“Such a great place for a nice get away”</blockquote>
+    <cite>Anne, Airbnb guest</cite>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="narrow">
+    <p class="kicker">Book your stay</p>
+    <h2>We'd love to welcome you</h2>
+    <p class="lead">Ca'Lamma is available year-round on Airbnb and Booking.com. Choose your preferred platform to check dates and prices.</p>
+    <div class="btns">
+      <a class="btn btn-air" href="https://www.airbnb.com/rooms/3348182" target="_blank" rel="noopener">Book on Airbnb</a>
+      <a class="btn btn-bkg" href="https://www.booking.com/hotel/it/ca-lamma-charming-stone-house-in-a-quiet-valley.html" target="_blank" rel="noopener">Book on Booking.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="brand">Ca'Lamma</span>
+  <p>Monterenzio · Emilia-Romagna · Italy</p>
+  <p style="margin-top:.6rem;opacity:.7">Registration IT037041C296C4HLPJ · © <span id="yr"></span> Ca'Lamma</p>
+</footer>
+
+<div id="lightbox" role="dialog" aria-label="Enlarged photo" aria-hidden="true"><img src="" alt=""></div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
+  });
+  var lb = document.getElementById('lightbox');
+  function openLightbox(img){
+    var full = lb.querySelector('img');
+    full.src = img.currentSrc.replace('im_w=720','im_w=1440');
+    full.alt = img.alt;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden','false');
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden','true');
+  }
+  document.querySelectorAll('#masonry img').forEach(function(img){
+    img.setAttribute('tabindex','0');
+    img.setAttribute('role','button');
+    img.addEventListener('click', function(){ openLightbox(img); });
+    img.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(img); }
+    });
+  });
+  lb.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
